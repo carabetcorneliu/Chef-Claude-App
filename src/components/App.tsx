@@ -1,14 +1,13 @@
-import Header from "./Header";
+import Header from "./Header.tsx";
+import Main from "./Main.tsx";
 // global app css
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
-      <p>Chef Claude, at your service</p>
+      <Main />
     </>
   );
 }
-
-export default App;
