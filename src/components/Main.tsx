@@ -4,8 +4,13 @@ import ClaudeRecipe from "./ClaudeRecipe";
 import useChefClaudeContext from "../lib/hooks";
 
 export default function Main() {
-  const { addIngredient, error, totalNumberOfIngredients, buttonDisabled } =
-    useChefClaudeContext();
+  const {
+    addIngredient,
+    error,
+    fetchError,
+    totalNumberOfIngredients,
+    buttonDisabled,
+  } = useChefClaudeContext();
   return (
     <main className="flex flex-col items-center pt-[30px]">
       {/* all page container for width */}
@@ -30,7 +35,13 @@ export default function Main() {
         ) : (
           <p>No ingredients</p>
         )}
-        {buttonDisabled ? "Chef is Loading..." : <ClaudeRecipe />}
+        {buttonDisabled ? (
+          "Chef is Loading..."
+        ) : fetchError ? (
+          fetchError
+        ) : (
+          <ClaudeRecipe />
+        )}
       </div>
     </main>
   );

@@ -1,6 +1,6 @@
 import Header from "./Header.tsx";
 import Main from "./Main.tsx";
-// global app css
+// global-utility css, backgroundcolor
 import "./App.css";
 
 export default function App() {

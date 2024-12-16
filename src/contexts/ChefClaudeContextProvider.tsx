@@ -11,6 +11,7 @@ type TChefClaudeContext = {
   claudeRecipeData: string | null;
   isRecipe: boolean;
   error: string;
+  fetchError: string;
   buttonDisabled: boolean;
   showError: (text: string) => void;
   disableButton: () => void;
@@ -26,6 +27,7 @@ const ChefClaudeContextProvider = ({
 }: ChefClaudeContextProviderProps) => {
   // state
   const [error, setError] = useState("");
+  const [fetchError, setFetchError] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [claudeRecipeData, setClaudeRecipeData] = useState<string | null>(null);
   const [ingredients, setIngredients] = useState([
@@ -70,7 +72,7 @@ const ChefClaudeContextProvider = ({
       const recipeMarkdown = await getRecipeFromMistral(ingredients);
       setClaudeRecipeData(recipeMarkdown);
     } catch (err) {
-      showError(`Failed to get recipe: ${err}`);
+      setFetchError(`fetching error: ${err}`);
       setClaudeRecipeData("");
     } finally {
       setButtonDisabled(false);
@@ -84,6 +86,7 @@ const ChefClaudeContextProvider = ({
         claudeRecipeData,
         isRecipe,
         error,
+        fetchError,
         buttonDisabled,
         showError,
         disableButton,

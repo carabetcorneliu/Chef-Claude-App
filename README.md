@@ -140,12 +140,6 @@ Contributions are welcome! To contribute:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
 ## Acknowledgments
 
 - [Mistral AI](https://mistral.ai) for recipe generation.
