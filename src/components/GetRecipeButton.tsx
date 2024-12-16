@@ -1,17 +1,13 @@
-type GetRecipeButtonProps = {
-  children: React.ReactNode;
-  handleGetRecipeButton: () => void;
-  className?: string;
-  buttonDisabled?: boolean;
-};
-export default function GetRecipeButton(props: GetRecipeButtonProps) {
+import useChefClaudeContext from "../lib/hooks";
+export default function GetRecipeButton() {
+  const { handleGetRecipe, buttonDisabled } = useChefClaudeContext();
   return (
     <button
-      onClick={props.handleGetRecipeButton}
-      className={`${props.className} ${props.buttonDisabled} ? "opacity-5" : "opacity-100"`}
-      disabled={props.buttonDisabled}
+      onClick={handleGetRecipe}
+      className={`bg-[#d37528] text-sm font-semibold rounded-[8px] text-white p-[8px_12px] leading-4 ${buttonDisabled} ? "opacity-5" : "opacity-100"`}
+      disabled={buttonDisabled}
     >
-      {props.children}
+      Get a Recipe
     </button>
   );
 }

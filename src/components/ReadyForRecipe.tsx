@@ -1,11 +1,6 @@
 import GetRecipeButton from "./GetRecipeButton";
 
-type ReadyForRecipeProps = {
-  getRecipe: () => void;
-  buttonDisabled?: boolean;
-};
-
-export default function ReadyForRecipe(props: ReadyForRecipeProps) {
+export default function ReadyForRecipe() {
   return (
     <section className="flex flex-row justify-between bg-[#f0ece9] gap-4 p-[30px_25px] rounded-[10px] my-5">
       <div>
@@ -14,13 +9,7 @@ export default function ReadyForRecipe(props: ReadyForRecipeProps) {
           Generate a recipe from your list of ingredients.
         </p>
       </div>
-      <GetRecipeButton
-        handleGetRecipeButton={props.getRecipe}
-        buttonDisabled={props.buttonDisabled}
-        className="bg-[#d37528] text-sm font-semibold rounded-[8px] text-white p-[8px_12px] leading-4"
-      >
-        Get a recipe
-      </GetRecipeButton>
+      <GetRecipeButton />
     </section>
   );
 }
