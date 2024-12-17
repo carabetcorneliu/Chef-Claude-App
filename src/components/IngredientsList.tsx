@@ -1,13 +1,12 @@
 import DeleteButton from "./DeleteButton";
-import ReadyForRecipe from "./ReadyForRecipe";
+
 import useChefClaudeContext from "../lib/hooks";
 
 export default function IngredientsList() {
-  const { ingredients, totalNumberOfIngredients, handleDeleteIngredient } =
-    useChefClaudeContext();
+  const { ingredients, handleDeleteIngredient } = useChefClaudeContext();
   return (
     <>
-      <section className="flex-grow w-full">
+      <section className="flex flex-col w-full">
         <h4 className="text-[#080707] text-[1rem] font-bold">
           Ingredients on hand:
         </h4>
@@ -24,11 +23,9 @@ export default function IngredientsList() {
                   className="text-red-700 text-[0.6rem] underline font-light"
                 />
               </span>
-              <span className="w-[175px]"></span>
             </li>
           ))}
         </ul>
-        {totalNumberOfIngredients > 3 && <ReadyForRecipe />}
       </section>
     </>
   );

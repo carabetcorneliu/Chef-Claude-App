@@ -9,7 +9,7 @@ export default function DeleteButton({
 }: DeleteButtonProps) {
   return (
     <button onClick={handleDeleteButton} className={className}>
-      remove
+      -remove
     </button>
   );
 }

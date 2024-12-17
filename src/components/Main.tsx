@@ -1,5 +1,7 @@
 import Button from "./Button";
 import IngredientsList from "./IngredientsList";
+import SuggestedIngredients from "./SuggestedIngredients";
+import ReadyForRecipe from "./ReadyForRecipe";
 import ClaudeRecipe from "./ClaudeRecipe";
 import useChefClaudeContext from "../lib/hooks";
 
@@ -15,7 +17,7 @@ export default function Main() {
     <main className="flex flex-col items-center pt-[30px]">
       {/* all page container for width */}
       <div className="w-[550px]">
-        <form action={addIngredient} className="flex gap-4 h-[38px] w-full">
+        <form action={addIngredient} className="flex gap-6 h-[38px] w-full">
           <input
             type="text"
             name="ingredient"
@@ -30,13 +32,23 @@ export default function Main() {
         <p className="flex justify-end h-[10px] text-red-700 text-[9px] font-light w-full pr-[175px]">
           {error ? error : ""}
         </p>
-        {totalNumberOfIngredients > 0 ? (
-          <IngredientsList />
+        <section className="flex gap-6 w-full">
+          {totalNumberOfIngredients > 0 ? (
+            <IngredientsList />
+          ) : (
+            <p className="w-full">No ingredients</p>
+          )}
+          <div className="w-[150px]">
+            <SuggestedIngredients />
+          </div>
+        </section>
+        {totalNumberOfIngredients > 3 ? (
+          <ReadyForRecipe />
         ) : (
-          <p>No ingredients</p>
+          <p className="h-[114px]"></p>
         )}
         {buttonDisabled ? (
-          "Chef is Loading..."
+          <span className="text-italic">"Chef is Loading..."</span>
         ) : fetchError ? (
           fetchError
         ) : (

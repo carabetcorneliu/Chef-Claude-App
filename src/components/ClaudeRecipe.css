@@ -1,0 +1,63 @@
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recipe-dividing-line {
+  padding: 10px 0;
+}
+
+.recipe-container > ul {
+  list-style-type: disc;
+}
+
+.recipe-container > ol {
+  list-style-type: decimal;
+}
+
+.recipe-container > ul,
+.recipe-container > ol {
+  padding: 10px 0px 0;
+}
+
+.recipe-container > ul > li,
+.recipe-container > ol > li {
+  font-size: smaller;
+}
+
+/* .recipe-container > h2, */
+/* selector for recipe name, 3rd child after separating line and <p> tag */
+.recipe-container > :nth-child(3) {
+  align-self: center;
+  font-size: larger;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+/* the rational of these un-named selectors is that the API sometimes marks down 
+Ingredients & Instructions headers as <p> other times as <h2>/<h3>/<h4>. 
+Usage of abstract selectors like this ensures systematic styling */
+
+/* .recipe-container > h3,
+.recipe-container > h4,
+.recipe-container > p:nth-child(n + 3):not(:nth-last-child(-n + 2)), */
+/* selector before unordered list(for Ingredients header)
+& selector before ordered list(for Instructions header) */
+.recipe-container :has(+ ul),
+.recipe-container :has(+ ol) {
+  color: #080707;
+  font-size: large;
+  padding-top: 10px;
+}
+
+.recipe-container > p:first-of-type {
+  font-size: 0.9rem;
+}
+
+.recipe-container > p:last-of-type {
+  padding: 30px 0 60px;
+  font-weight: 500;
+}
