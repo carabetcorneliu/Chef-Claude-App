@@ -34,7 +34,7 @@ const ChefClaudeContextProvider = ({
   const [fetchError, setFetchError] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [claudeRecipeData, setClaudeRecipeData] = useState<string | null>(null);
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState<string[]>([]);
   //   "all the main spices",
   //   "garlic",
   //   "chicken",
@@ -44,30 +44,78 @@ const ChefClaudeContextProvider = ({
   const [selectedCategory, setSelectedCategory] = useState("meat&proteins");
   // const data
   const suggestedIngredients = {
-    "meat&proteins": ["chicken", "beef", "pork", "fish", "tofu", "eggs"],
+    "meat&proteins": [
+      "chicken",
+      "beef",
+      "duck",
+      "lamb",
+      "turkey",
+      "pork",
+      "fish",
+      "tofu",
+      "eggs",
+    ],
     vegetables: [
+      "asparagus",
+      "broccoli",
+      "bell peppers",
+      "beans",
+      "cabbage",
+      "cucumbers",
       "carrots",
       "potatoes",
+      "sweet potatoes",
       "onions",
-      "bell peppers",
-      "broccoli",
       "spinach",
       "mushrooms",
+      "garlic",
+      "zucchini",
     ],
     spices: [
+      "cardamon",
+      "cumin",
+      "cinnamon",
+      "coriander",
+      "cayenne",
+      "clove",
+      "curry",
+      "chilli",
       "salt",
       "pepper",
       "paprika",
-      "cumin",
       "basil",
       "yhyme",
       "oregano",
-      "cinnamon",
       "ginger",
+      "garlic powder",
+      "thyme",
+      "parsley",
     ],
     fruits: ["tomatoes", "lemons", "apples", "bananas", "berries", "oranges"],
-    dairy: ["milk", "cheese", "butter", "yogurt", "cream"],
-    grains: ["rice", "pasta", "lentils", "chickpeas", "quinoa", "bread"],
+    dairy: [
+      "milk",
+      "cheese",
+      "butter",
+      "yogurt",
+      "cream",
+      "ice cream",
+      "kefir",
+      "whey",
+      "sour cream",
+      "ghee",
+    ],
+    grains: [
+      "rice",
+      "pasta",
+      "lentils",
+      "chickpeas",
+      "quinoa",
+      "bread",
+      "oats",
+      "arroz",
+      "farro",
+      "granola",
+    ],
     condiments: [
       "soy sauce",
       "vinegar",
@@ -76,6 +124,14 @@ const ChefClaudeContextProvider = ({
       "mustard",
       "honey",
       "hot sauce",
+      "salsa",
+      "barbecue sauce",
+      "nut butter",
+      "wasabi",
+      "pesto",
+      "guacamole",
+      "dijon mustard",
+      "hummus",
     ],
     nuts: [
       "almonds",
@@ -83,6 +139,12 @@ const ChefClaudeContextProvider = ({
       "sunflower seeds",
       "pumpkin seeds",
       "chia seeds",
+      "macadamia nuts",
+      "pecans",
+      "cashews",
+      "hazelnuts",
+      "sesame seeds",
+      "pistachios",
     ],
   };
 
@@ -105,7 +167,7 @@ const ChefClaudeContextProvider = ({
   // refactor to React 19 forms
 
   const checkIfInList = (newIngredient: string) => {
-    if (ingredients.map((i) => i.toLowerCase()).includes(newIngredient)) {
+    if (ingredients.map((i) => i).includes(newIngredient)) {
       showError("ingredient already in list");
       return true;
     }

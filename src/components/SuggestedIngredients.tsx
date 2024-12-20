@@ -23,21 +23,23 @@ export default function SuggestedIngredients() {
           ))}
         </select>
       </section>
-      <ul className="flex flex-col self-end h-[200px]">
-        {suggestedIngredients[selectedCategory].map((ingredient: string) => (
-          <li
-            className="flex flex-row justify-between w-[150px] text-[0.75rem] font-light h-5"
-            key={ingredient}
-          >
-            {ingredient}
-            <Button
-              onClick={() => handleFastAddIngredient(ingredient)}
-              className="text-red-700 text-[0.6rem] underline font-light"
+      <ul className="flex flex-col self-end min-h-[200px]">
+        {suggestedIngredients[selectedCategory]
+          .sort()
+          .map((ingredient: string) => (
+            <li
+              className="flex flex-row justify-between w-[150px] text-[0.75rem] font-light h-5"
+              key={ingredient}
             >
-              +add
-            </Button>
-          </li>
-        ))}
+              {ingredient}
+              <Button
+                onClick={() => handleFastAddIngredient(ingredient)}
+                className="text-red-700 text-[0.6rem] underline font-light"
+              >
+                +add
+              </Button>
+            </li>
+          ))}
       </ul>
     </span>
   );

@@ -7,10 +7,10 @@ export default function IngredientsList() {
   return (
     <>
       <section className="flex flex-col w-full">
-        <h4 className="text-[#080707] text-[1rem] font-bold">
+        <h4 className="text-[#1f1f1d] text-[1rem] font-bold">
           Ingredients on hand:
         </h4>
-        <ul className="flex flex-col flex-grow items-center w-full pt-[11px]">
+        <ul className="flex flex-col flex-grow items-center w-full pt-[11px] text-[#1f1f1d]">
           {ingredients.map((ingredient: string) => (
             <li
               key={ingredient}

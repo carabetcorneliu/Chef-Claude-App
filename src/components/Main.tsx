@@ -23,9 +23,9 @@ export default function Main() {
             name="ingredient"
             placeholder="e.g. oregano"
             aria-label="Add ingredient"
-            className="flex flex-shrink flex-grow rounded-[6px] border border-[#D1D5DB] p-[9px_13px] shadow-input"
+            className="flex flex-shrink flex-grow rounded-[6px] border border-[#D1D5DB] text-[#1f1f1d] p-[9px_13px] shadow-input"
           />
-          <Button className="rounded-[6px] border bg-[#141413] text-[#FAFAF8] before:content-['+'] before:m-2 w-[150px] text-[0.875rem] font-[500]">
+          <Button className="rounded-[6px] border bg-[#1f1f1d] text-[#FAFAF8] before:content-['+'] before:m-2 w-[150px] text-[0.875rem] font-[500]">
             Add ingredient
           </Button>
         </form>
@@ -36,7 +36,7 @@ export default function Main() {
           {totalNumberOfIngredients > 0 ? (
             <IngredientsList />
           ) : (
-            <p className="w-full">No ingredients</p>
+            <p className="w-full text-[#1f1f1d]">No ingredients</p>
           )}
           <div className="w-[150px]">
             <SuggestedIngredients />
@@ -48,7 +48,9 @@ export default function Main() {
           <p className="h-[114px]"></p>
         )}
         {buttonDisabled ? (
-          <span className="text-italic">"Chef is Loading..."</span>
+          <span className="text-italic text-[#1f1f1d]">
+            "Chef is Loading..."
+          </span>
         ) : fetchError ? (
           fetchError
         ) : (
