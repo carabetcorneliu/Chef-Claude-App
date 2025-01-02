@@ -28,7 +28,7 @@ export default function SuggestedIngredients() {
           .sort()
           .map((ingredient: string) => (
             <li
-              className="flex flex-row justify-between w-[150px] text-[0.75rem] font-light h-5"
+              className="flex flex-row justify-between w-36 text-[0.75rem] font-light h-5"
               key={ingredient}
             >
               {ingredient}

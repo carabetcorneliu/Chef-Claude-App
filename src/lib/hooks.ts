@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ChefClaudeContext } from "../contexts/ChefClaudeContextProvider";
+import { ChefClaudeContext } from "../contexts/ChefClaudeContext";
 
 export default function useChefClaudeContext() {
   const context = useContext(ChefClaudeContext);

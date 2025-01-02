@@ -20,7 +20,7 @@ export default function IngredientsList() {
                 <span>- {ingredient}</span>
                 <DeleteButton
                   handleDeleteButton={() => handleDeleteIngredient(ingredient)}
-                  className="text-red-700 text-[0.6rem] underline font-light"
+                  className="text-red-700 text-[0.6rem] underline font-light pr-2"
                 />
               </span>
             </li>

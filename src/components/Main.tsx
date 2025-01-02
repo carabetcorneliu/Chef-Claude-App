@@ -16,7 +16,7 @@ export default function Main() {
   return (
     <main className="flex flex-col items-center pt-[30px]">
       {/* all page container for width */}
-      <div className="w-[550px]">
+      <div className="max-w-[500px]">
         <form action={addIngredient} className="flex gap-6 h-[38px] w-full">
           <input
             type="text"
@@ -25,11 +25,11 @@ export default function Main() {
             aria-label="Add ingredient"
             className="flex flex-shrink flex-grow rounded-[6px] border border-[#D1D5DB] text-[#1f1f1d] p-[9px_13px] shadow-input"
           />
-          <Button className="rounded-[6px] border bg-[#1f1f1d] text-[#FAFAF8] before:content-['+'] before:m-2 w-[150px] text-[0.875rem] font-[500]">
+          <Button className="rounded-[6px] border bg-[#1f1f1d] text-[#FAFAF8] w-36 before:content-['+'] before:m-2 text-[0.875rem] font-[500]">
             Add ingredient
           </Button>
         </form>
-        <p className="flex justify-end h-[10px] text-red-700 text-[9px] font-light w-full pr-[175px]">
+        <p className="flex justify-end h-[10px] text-red-700 text-[9px] font-light w-full pr-44">
           {error ? error : ""}
         </p>
         <section className="flex gap-6 w-full">
@@ -38,7 +38,7 @@ export default function Main() {
           ) : (
             <p className="w-full text-[#1f1f1d]">No ingredients</p>
           )}
-          <div className="w-[150px]">
+          <div className="w-36">
             <SuggestedIngredients />
           </div>
         </section>
@@ -48,9 +48,7 @@ export default function Main() {
           <p className="h-[114px]"></p>
         )}
         {buttonDisabled ? (
-          <span className="text-italic text-[#1f1f1d]">
-            "Chef is Loading..."
-          </span>
+          <p className="text-italic text-[#1f1f1d] pb-4">Chef is loading...</p>
         ) : fetchError ? (
           fetchError
         ) : (
