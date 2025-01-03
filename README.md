@@ -1,5 +1,7 @@
 # Chef Claude App
 
+🌐[Live Demo](https://chef-claude-recipe.netlify.app)
+
 Chef Claude App is a modern web application that helps you create delicious recipes based on a list of ingredients you provide. It leverages the power of the Mistral API and Hugging Face models to generate creative and practical cooking instructions. Built using React, TypeScript, and styled with TailwindCSS, Chef Claude App ensures a smooth and responsive user experience.
 
 ---
