@@ -58,7 +58,7 @@ export const useChefClaudeState = () => {
       setClaudeRecipeData(recipeMarkdown);
     } catch (err) {
       setFetchError(`fetching error: ${err}`);
-      setClaudeRecipeData("");
+      setClaudeRecipeData(null);
     } finally {
       setButtonDisabled(false);
     }
@@ -91,6 +91,7 @@ export const useChefClaudeState = () => {
     totalNumberOfIngredients,
     isRecipe,
     addIngredient,
+    showError,
     handleFastAddIngredient,
     handleDeleteIngredient,
     handleGetRecipe,

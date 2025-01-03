@@ -14,19 +14,21 @@ export default function Main() {
     buttonDisabled,
   } = useChefClaudeContext();
   return (
-    <main className="flex flex-col items-center pt-[30px]">
+    <main className="w-full flex flex-col items-center pt-[30px]">
       {/* all page container for width */}
-      <div className="max-w-[500px]">
+      <div className="w-screen max-w-[500px] flex flex-col items-center px-[10px]">
         <form action={addIngredient} className="flex gap-6 h-[38px] w-full">
           <input
             type="text"
             name="ingredient"
             placeholder="e.g. oregano"
             aria-label="Add ingredient"
-            className="flex flex-shrink flex-grow rounded-[6px] border border-[#D1D5DB] text-[#1f1f1d] p-[9px_13px] shadow-input"
+            className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg sm:p-[5px_8px] p-[9px_13px] flex flex-grow rounded-[6px] border border-[#D1D5DB] text-[#1f1f1d] shadow-input"
           />
-          <Button className="rounded-[6px] border bg-[#1f1f1d] text-[#FAFAF8] w-36 before:content-['+'] before:m-2 text-[0.875rem] font-[500]">
-            Add ingredient
+          <Button className="rounded-[6px] border bg-[#1f1f1d] text-[0.875rem] font-[500] text-[#FAFAF8] w-36">
+            <span className="inline">+ </span>
+            <span>Add </span>
+            <span className="hidden md:inline">ingredient</span>
           </Button>
         </form>
         <p className="flex justify-end h-[10px] text-red-700 text-[9px] font-light w-full pr-44">

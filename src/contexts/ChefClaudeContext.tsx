@@ -4,7 +4,7 @@ type TChefClaudeContext = {
   ingredients: string[];
   totalNumberOfIngredients: number;
   selectedCategory: string;
-  recipeSection: React.RefObject<HTMLDivElement>;
+  recipeSection: object;
   suggestedIngredients: Record<string, string[]>;
   claudeRecipeData: string | null;
   isRecipe: boolean;
@@ -13,7 +13,6 @@ type TChefClaudeContext = {
   buttonDisabled: boolean;
   handleCategoryChange: (category: string) => void;
   showError: (text: string) => void;
-  disableButton: () => void;
   addIngredient: (formData: FormData) => void;
   handleFastAddIngredient: (ingredient: string) => void;
   handleDeleteIngredient: (ingredient: string) => void;
