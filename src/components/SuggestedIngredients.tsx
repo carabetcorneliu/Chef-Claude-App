@@ -23,7 +23,7 @@ export default function SuggestedIngredients() {
           ))}
         </select>
       </section>
-      <ul className="flex flex-col self-end min-h-[200px]">
+      <ul className="flex flex-col self-end min-h-[360px]">
         {suggestedIngredients[selectedCategory]
           .sort()
           .map((ingredient: string) => (
